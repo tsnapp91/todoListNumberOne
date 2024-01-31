@@ -1,6 +1,11 @@
 import React, { useState, useRef } from "react";
 import { connect } from "react-redux";
-import { addTodos, removeTodos, updateTodos } from "../redux/reducer";
+import {
+  addTodos,
+  removeTodos,
+  updateTodos,
+  completeTodos,
+} from "../redux/reducer";
 
 const mapStateToProps = (state) => {
   return {
@@ -13,6 +18,7 @@ const mapDispatchToProps = (dispatch) => {
     addTodo: (obj) => dispatch(addTodos(obj)),
     removeTodos: (id) => dispatch(removeTodos(id)),
     updateTodos: (obj) => dispatch(updateTodos(obj)),
+    completeTodos: (id) => dispatch(completeTodos(id)),
   };
 };
 
@@ -60,25 +66,6 @@ const Todos = (props) => {
         Add
       </button>
       <br />
-
-      <ul>
-        {props.todos.map((item) => {
-          return (
-            <li key={item.id}>
-              <textarea
-                ref={inputRef}
-                disabled={inputRef}
-                defaultValue={item.item}
-                onKeyDown={(e) => update(item.id, inputRef.current.value, e)}
-              />
-              <button onClick={() => changeFocus()}>Edit</button>
-              <button onClick={() => props.removeTodos(item.id)}>
-                Delete
-              </button>{" "}
-            </li>
-          );
-        })}
-      </ul>
     </div>
   );
 };
