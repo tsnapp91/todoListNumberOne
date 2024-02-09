@@ -25,9 +25,12 @@ const TodoItem = (props) => {
         defaultValue={item.item}
         onKeyDown={(e) => update(item.id, inputRef.current.value, e)}
       />
-      <button onClick={() => changeFocus()}>Edit</button>
-      <button onClick={() => completeTodos(item.id)}>complete</button>
-      <button onClick={() => removeTodos(item.id)}>Delete</button>{" "}
+      <div className="btns">
+        <button onClick={() => changeFocus()}>Edit</button>
+        <button onClick={() => completeTodos(item.id)}>complete</button>
+        <button onClick={() => removeTodos(item.id)}>Delete</button>{" "}
+      </div>
+      {item.completed && <span className="completed">done</span>}
     </li>
   );
 };
