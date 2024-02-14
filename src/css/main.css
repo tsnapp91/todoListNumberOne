@@ -33,3 +33,70 @@ body {
 
     text-shadow: 0 0 5px #433aa8, 3px -1px 5px #0b0906;
 }
+
+
+.addTodos {
+    display: flex;
+    justify-content: center;
+}
+
+.todo-input {
+    min-width: 15rem;
+    width: 40vw;
+
+    max-height: 2.5rem;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+
+    align-self: center;
+}
+
+.todo-input:focus {
+    outline: none;
+    border: 2px solid #433aa8;
+}
+
+.add-btn {
+    margin-left: 1rem;
+    background-color: #271c6c;
+    color: aliceblue;
+    border-radius: 50%;
+    border: 2px solid aliceblue;
+    font-size: 1.5rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    cursor: pointer;
+    box-shadow: 2px 4px 10px #271c6c;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-btn:focus {
+    outline: none
+}
+
+.displaytodos {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.displaytodos .buttons {
+    margin-bottom: 2rem;
+}
+
+.displaytodos .buttons button {
+    padding: 0.5rem 1.2rem;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+}
+
+.displaytodos .buttons button:not(:last-child) {
+    margin-right: 1rem;
+}
